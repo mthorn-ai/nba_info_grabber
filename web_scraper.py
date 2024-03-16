@@ -1,4 +1,3 @@
-import argparse
 import requests
 import sys
 from bs4 import BeautifulSoup
@@ -116,7 +115,6 @@ def format_standings():
 
 
 def format_games(d = None):
-    #url = ""
     if d == None or d == 1:
         url = "https://www.basketball-reference.com/boxscores/?"
     elif d >= 2 and d <=5:
@@ -137,6 +135,36 @@ def format_games(d = None):
         print(winner + (" " * spaces) + loser)
         print("\n")
 
+
+def box_score():
+    pass
+
+def help_message():
+    # print("")
+    pass
+
+
+
+def main():
+    args = sys.argv[1:]
+    if len(args) == 0:
+        format_games()
+    elif args[0] == "-s":
+        format_standings()
+    elif args[0] == "-d" and len(args) == 1:
+        format_games()
+    elif args[0] == "-d":
+        format_games(int(args[1]))
+    elif args[0] == "-bs":
+        # game_stats()
+        pass
+
+
+
+
+
+if __name__ == "__main__":
+    main()
 
 
 
