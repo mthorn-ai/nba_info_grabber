@@ -156,8 +156,8 @@ def main():
     elif args[0] == "-d":
         format_games(int(args[1]))
     elif args[0] == "-bs":
-        # game_stats()
-        pass
+        pass  # game_stats()
+
 
 
 
